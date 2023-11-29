@@ -9,6 +9,9 @@ export class BytePwdComponent implements OnInit {
 
   constructor() { }
 
+  title:string="BYTE PASSWORD MANAGER"
+  subtitle:string="...BYTE PASSWORD..."
+
   ngOnInit(): void {
   }
 

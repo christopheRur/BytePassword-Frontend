@@ -1,2 +1,34 @@
-<nav></nav>
+<nav class="navigation"><h1>{{title}}</h1></nav>
+<div class="container">
+  <mat-card class="custom-card">
+    <mat-card-title style="color:rgba(0, 128, 0, 0.374);"> {{subtitle}} </mat-card-title>
+    <mat-card-content class="content">
+      <table class="center-table">
+        <thead>
+          <tr>
+            <td class="emails">EMAILS</td>
+            <td>HINTS</td>
+            <td class="password">PASSWORDS</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="email-cell">EMAIL : {{ "testing@yahoo.com" }}</td>
+            <td>Hint : {{ "Hint" }}</td>
+            <td class="password-cell">
+              Password : {{ "fdjkjkflsd4589343879hjkfry" }}
+            </td>
 
+            <td><button>Decrypt</button></td> <pre></pre>
+
+          </tr>
+          <tr> <td class="message"></td></tr>
+        </tbody>
+      </table>
+    </mat-card-content>
+    <!-- <mat-card-actions>
+      DECRYPT
+    </mat-card-actions> -->
+    <mat-card-footer> FOOTER </mat-card-footer>
+  </mat-card>
+</div>

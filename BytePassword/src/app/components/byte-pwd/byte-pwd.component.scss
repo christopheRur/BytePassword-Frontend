@@ -1,0 +1,63 @@
+.navigation{
+text-align: center;
+background-color: aquamarine;
+height: 0.3%;
+padding: 2%;
+font-size: x-large;
+font-style: bold;
+position: sticky;
+top: 0;
+}
+.custom-card{
+  /* Your card-specific styles here */
+  width: 2000px; /* Adjust the width as needed */
+  max-width: 100%; /* Ensures the card doesn't exceed its container */
+  box-sizing: border-box; /* Includes padding and border in the width */
+  overflow: hidden; /* Ensures content doesn't overflow */
+  margin: 14px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  background-color:rgba(37, 36, 36, 0.184);
+  text-align: center;
+  color: white;
+
+}
+.center-table{
+  margin: auto;
+}
+.emails{
+  padding-right: 200px;
+
+}
+.password{
+  padding-left: 200px;
+}
+.email-cell{
+  padding-right: 200px;
+
+}
+
+ .password-cell{
+  padding-left: 200px;
+}
+
+
+.content{
+  align-items: center;
+  text-align: center;
+}
+
+.container{
+
+  background-color: black;
+}
+
+.message{
+  text-align: center;
+  padding-left: 400px;
+  align-items: center;
+}
