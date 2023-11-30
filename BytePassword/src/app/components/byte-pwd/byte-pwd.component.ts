@@ -11,8 +11,16 @@ export class BytePwdComponent implements OnInit {
 
   title:string="BYTE PASSWORD MANAGER"
   subtitle:string="...BYTE PASSWORD..."
+  showDropDown: boolean = false;
+
 
   ngOnInit(): void {
   }
+
+  toggleDropdown(): boolean {
+    this.showDropDown = !this.showDropDown;
+    return this.showDropDown;
+  }
+
 
 }

@@ -19,10 +19,24 @@
               Password : {{ "fdjkjkflsd4589343879hjkfry" }}
             </td>
 
-            <td><button>Decrypt</button></td> <pre></pre>
+            <td><button class="decrypt-btn">Decrypt</button></td> <pre></pre>
 
           </tr>
-          <tr> <td class="message"></td></tr>
+          <tr> <td class="message">
+
+
+            <button class="dropdown" (click)="toggleDropdown()">View Memo</button>
+
+              <div class="allSequences" >
+                <div  class=" " *ngIf="showDropDown">
+                  <ul style="list-style-type: none">
+                    <li>{{ "sequences.sequence" }}</li>
+                  </ul>
+                </div>
+              </div>
+
+
+          </td></tr>
         </tbody>
       </table>
     </mat-card-content>

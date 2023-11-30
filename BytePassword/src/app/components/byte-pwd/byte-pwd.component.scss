@@ -58,6 +58,31 @@ top: 0;
 
 .message{
   text-align: center;
-  padding-left: 400px;
+  padding-right: 200px;
   align-items: center;
+}
+.decrypt-btn{
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  padding: 2px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+
+  text-align: center;
+}
+.decrypt-btn:hover {
+  background-color: #0e220f;
+}
+.dropdown{
+  background-color: #4CAF50;
+  color: white;
+  padding: 2px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.dropdown:hover {
+  background-color: #0e220f;
 }
