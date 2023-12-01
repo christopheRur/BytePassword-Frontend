@@ -10,7 +10,7 @@ export class BytePwdComponent implements OnInit {
   constructor() { }
 
   title:string="BYTE PASSWORD MANAGER"
-  subtitle:string="...BYTE PASSWORD..."
+  subtitle:string="...BYTE PASSWORDS..."
   showDropDown: boolean = false;
 
 

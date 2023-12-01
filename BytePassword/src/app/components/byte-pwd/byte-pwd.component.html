@@ -1,5 +1,13 @@
-<nav class="navigation"><h1>{{title}}</h1></nav>
+<nav class="navigation">
+  <h1>{{title}}</h1> <button class="logout-btn" mat-button>
+    <mat-icon class="log-out" >logout</mat-icon>
+</button>
+
+  </nav>
 <div class="container">
+  <button class="add-btn" mat-button>
+    <mat-icon >add</mat-icon>
+</button>
   <mat-card class="custom-card">
     <mat-card-title style="color:rgba(0, 128, 0, 0.374);"> {{subtitle}} </mat-card-title>
     <mat-card-content class="content">
@@ -12,14 +20,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="email-cell">EMAIL : {{ "testing@yahoo.com" }}</td>
+          <tr class="row-container">
+            <td class="email-cell">Email : {{ "testing@yahoo.com" }}</td>
             <td>Hint : {{ "Hint" }}</td>
             <td class="password-cell">
               Password : {{ "fdjkjkflsd4589343879hjkfry" }}
             </td>
 
-            <td><button class="decrypt-btn">Decrypt</button></td> <pre></pre>
+            <td><button class="decrypt-btn">Decrypt</button> <button class="delete-btn" mat-button>
+              <mat-icon >delete</mat-icon>
+          </button></td> <pre></pre>
 
           </tr>
           <tr> <td class="message">
@@ -28,10 +38,17 @@
             <button class="dropdown" (click)="toggleDropdown()">View Memo</button>
 
               <div class="allSequences" >
-                <div  class=" " *ngIf="showDropDown">
-                  <ul style="list-style-type: none">
-                    <li>{{ "sequences.sequence" }}</li>
-                  </ul>
+                <div   *ngIf="showDropDown">
+                  <mat-card>
+                    <mat-card-content class="drop-container">
+                      <div>
+                        {{ "sequences.sequencen Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done. hCompressing objects: 100% (8/8), done.jh sequences.sequencen Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done. hCompressing objects: 100% (8/8), done.jh" }}
+                      </div>
+
+                    </mat-card-content>
+                  </mat-card>
+
+
                 </div>
               </div>
 

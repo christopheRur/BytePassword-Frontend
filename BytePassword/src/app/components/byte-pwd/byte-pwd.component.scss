@@ -1,19 +1,68 @@
 .navigation{
-text-align: center;
-background-color: aquamarine;
-height: 0.3%;
-padding: 2%;
-font-size: x-large;
-font-style: bold;
-position: sticky;
-top: 0;
+  background-color: aquamarine;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  padding: 4 20px;
+  font-size: 20px;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  margin: 0;
+  text-align: center;
 }
+.logout-btn{
+  background-color: aquamarine;
+  border:none;
+}
+.log-out{
+  color: red;
+}
+.log-out:hover{
+background-color: red;
+}
+.logout-btn:hover{
+ background-color: red
+}
+.add-btn{
+  border-radius: 50%; /* Makes the button circular */
+  width: 40px; /* Adjust width and height as needed for the button size */
+  height: 40px;
+  background-color: aquamarine; /* Change background color */
+  color:#03520e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+ // font-size: 82px;
+
+}
+
+
+.add-btn:hover {
+  background-color: #0ee62b; /* Change background color on hover */
+}
+
+.mat-icon:hover {
+color: black;
+}
+
+.navigation h1 {
+  margin: 0;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
 .custom-card{
-  /* Your card-specific styles here */
-  width: 2000px; /* Adjust the width as needed */
-  max-width: 100%; /* Ensures the card doesn't exceed its container */
-  box-sizing: border-box; /* Includes padding and border in the width */
-  overflow: hidden; /* Ensures content doesn't overflow */
+
+  width: 2000px;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
   margin: 14px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
@@ -86,3 +135,27 @@ top: 0;
 .dropdown:hover {
   background-color: #0e220f;
 }
+.drop-container{
+
+  background: linear-gradient(to right, #414141, #28ff70, rgb(37, 82, 244),rgb(139, 205, 139),rgb(247, 232, 232));
+  border-radius: 12%;
+}
+
+.row-container:hover{
+
+  background: linear-gradient(to right, #0f0f0f, #28ff70, rgb(37, 82, 244),rgb(4, 17, 4),rgb(48, 1, 1));
+  border-radius: 12%;
+
+}
+.delete-btn{
+  background-color:rgba(37, 36, 36, 0.184);
+  border: none;
+}
+
+.delete-btn mat-icon{
+  color: red;
+  padding: 1px;
+}
+
+
+
