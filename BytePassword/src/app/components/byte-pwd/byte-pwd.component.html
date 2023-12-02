@@ -5,7 +5,7 @@
 
   </nav>
 <div class="container">
-  <button class="add-btn" mat-button>
+  <button (click)="openDialogToAdd()" class="add-btn" mat-button>
     <mat-icon >add</mat-icon>
 </button>
   <mat-card class="custom-card">
@@ -35,7 +35,7 @@
           <tr> <td class="message">
 
 
-            <button class="dropdown" (click)="toggleDropdown()">View Memo</button>
+            <button class="dropdown" mat-raised-button (click)="toggleDropdown()">View Memo</button>
 
               <div class="allSequences" >
                 <div   *ngIf="showDropDown">

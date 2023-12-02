@@ -26,7 +26,7 @@ background-color: red;
  background-color: red
 }
 .add-btn{
-  border-radius: 50%; /* Makes the button circular */
+  border-radius: 20%; /* Makes the button circular */
   width: 40px; /* Adjust width and height as needed for the button size */
   height: 40px;
   background-color: aquamarine; /* Change background color */
@@ -36,7 +36,7 @@ background-color: red;
   align-items: center;
   border: none;
   cursor: pointer;
-  margin: 10px;
+  margin: 20px;
  // font-size: 82px;
 
 }
@@ -130,6 +130,7 @@ color: black;
   border: none;
   cursor: pointer;
   border-radius: 4px;
+  height: 34px;
 }
 
 .dropdown:hover {

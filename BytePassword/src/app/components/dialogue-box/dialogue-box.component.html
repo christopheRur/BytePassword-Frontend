@@ -1,0 +1,26 @@
+<h1 mat-dialog-title class="title">{{title}}</h1>
+<form [formGroup]="addForm" class="form-inner-container" (ngSubmit)="addCredentials()">
+  <div mat-dialog-content>
+    <mat-form-field class="full-width">
+      <input matInput formControlName="email" placeholder="Email">
+      <mat-icon matSuffix>drafts</mat-icon>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput formControlName="hint" placeholder="Hint">
+      <mat-icon matSuffix>highlight</mat-icon>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput formControlName="password" placeholder="Password">
+      <mat-icon matSuffix>password</mat-icon>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <textarea matInput formControlName="memo" placeholder="Memo"></textarea>
+      <mat-icon matSuffix>memo</mat-icon>
+    </mat-form-field>
+  </div>
+  <p class="error-alert">{{invalidInfo}}</p>
+  <div class="actions">
+    <button mat-raised-button class="cancel-button">Cancel<mat-icon matSuffix>cancel</mat-icon></button>
+    <button type="submit" mat-raised-button class="save-button">Save <mat-icon matSuffix>save</mat-icon></button>
+  </div>
+</form>

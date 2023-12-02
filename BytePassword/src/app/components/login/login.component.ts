@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   constructor(private router: Router) { }
+  title:string="BYTE PASSWORD MANAGER";
+  invalidInfo!: string;
 
 
 loginForm = new FormGroup({
@@ -25,14 +27,18 @@ loginForm = new FormGroup({
 
 
  public login():void {
-  if(this.loginForm.invalid)return;
+  if(this.loginForm.invalid){
+    this.invalidInfo="Invalid email or password";
+  return}
 
-  this.router.navigate(['/byte-pwd'])
+ else this.router.navigate(['/byte-pwd'])
 
    }
 
    public signUp():void {
-     if(this.loginForm.invalid)return;
+
+    this.router.navigate(['/sign-up']);
+
 
      alert('Calling backend to sign up!')
       }

@@ -1,0 +1,41 @@
+.title {
+  text-align: center;
+}
+
+
+.form-inner-container {
+  width: 630px;
+  border-radius: 15px; /* Adjust border-radius as needed */
+  background-color: rgba(255, 228, 196, 0.085);
+
+  .mat-dialog-content {
+    background-color: aquamarine;
+    margin: 1%;
+    border-radius: 5%;
+  }
+
+  .full-width {
+    width: 550px;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center; /* Center align buttons */
+    margin-top: 20px; /* Adjust spacing as needed */
+
+    .cancel-button,
+    .save-button {
+      margin: 0 10px; /* Adjust spacing between buttons */
+    }
+  }
+  .error-alert{
+    display: flex;
+    justify-content: center;
+    color: red;
+  }
+.error-alert:hover{
+
+  color: rgb(231, 37, 234);
+
+}
+}
