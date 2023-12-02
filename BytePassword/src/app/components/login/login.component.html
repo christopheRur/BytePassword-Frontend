@@ -1,21 +1,31 @@
 <form [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="off">
-
-  <h1>{{title}}</h1>
+  <h1>{{ title }}</h1>
 
   <div class="form-control">
     <label for="username">Username</label>
-    <input formControlName="username" id="username" autocomplete="off" type="text">
+    <input
+      formControlName="username"
+      id="username"
+      autocomplete="off"
+      type="text"
+    />
   </div>
 
   <div class="form-control">
     <label for="password">Password</label>
-    <input formControlName="password" id="password" autocomplete="off" type="password">
+    <input
+      formControlName="password"
+      id="password"
+      autocomplete="off"
+      type="password"
+    />
   </div>
-<p style="color: red;">{{invalidInfo}}</p>
+  <p style="color: red">{{ invalidInfo }}</p>
   <div class="button-container">
     <button type="submit" class="btn-login">Login &#8594;</button>
     <span class="button-spacing"></span>
-    <button class="btn" type="button" (click)="signUp()">Sign Up &#x2302;</button>
+    <button class="btn" type="button" (click)="signUp()">
+      Sign Up &#x2302;
+    </button>
   </div>
-
 </form>

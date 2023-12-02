@@ -1,4 +1,4 @@
-.navigation{
+.navigation {
   background-color: aquamarine;
   display: flex;
   justify-content: space-between;
@@ -12,42 +12,40 @@
   margin: 0;
   text-align: center;
 }
-.logout-btn{
+.logout-btn {
   background-color: aquamarine;
-  border:none;
+  border: none;
 }
-.log-out{
+.log-out {
   color: red;
 }
-.log-out:hover{
-background-color: red;
+.log-out:hover {
+  background-color: red;
 }
-.logout-btn:hover{
- background-color: red
+.logout-btn:hover {
+  background-color: red;
 }
-.add-btn{
+.add-btn {
   border-radius: 20%; /* Makes the button circular */
   width: 40px; /* Adjust width and height as needed for the button size */
   height: 40px;
   background-color: aquamarine; /* Change background color */
-  color:#03520e;
+  color: #03520e;
   display: flex;
   justify-content: center;
   align-items: center;
   border: none;
   cursor: pointer;
   margin: 20px;
- // font-size: 82px;
-
+  // font-size: 82px;
 }
-
 
 .add-btn:hover {
   background-color: #0ee62b; /* Change background color on hover */
 }
 
 .mat-icon:hover {
-color: black;
+  color: black;
 }
 
 .navigation h1 {
@@ -57,8 +55,7 @@ color: black;
   text-align: center;
 }
 
-.custom-card{
-
+.custom-card {
   width: 2000px;
   max-width: 100%;
   box-sizing: border-box;
@@ -70,48 +67,43 @@ color: black;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   align-items: center;
-  background-color:rgba(37, 36, 36, 0.184);
+  background-color: rgba(37, 36, 36, 0.184);
   text-align: center;
   color: white;
-
 }
-.center-table{
+.center-table {
   margin: auto;
 }
-.emails{
+.emails {
   padding-right: 200px;
-
 }
-.password{
+.password {
   padding-left: 200px;
 }
-.email-cell{
+.email-cell {
   padding-right: 200px;
-
 }
 
- .password-cell{
+.password-cell {
   padding-left: 200px;
 }
 
-
-.content{
+.content {
   align-items: center;
   text-align: center;
 }
 
-.container{
-
+.container {
   background-color: black;
 }
 
-.message{
+.message {
   text-align: center;
   padding-right: 200px;
   align-items: center;
 }
-.decrypt-btn{
-  background-color: #4CAF50; /* Green background */
+.decrypt-btn {
+  background-color: #4caf50; /* Green background */
   color: white;
   padding: 2px 12px;
   border: none;
@@ -123,40 +115,49 @@ color: black;
 .decrypt-btn:hover {
   background-color: #0e220f;
 }
-.dropdown{
-  background-color: #4CAF50;
+.dropdown {
+  background-color: #4caf50;
   color: white;
   padding: 2px 12px;
   border: none;
   cursor: pointer;
   border-radius: 4px;
-  height: 34px;
+
+  text-align: center;
 }
 
 .dropdown:hover {
   background-color: #0e220f;
 }
-.drop-container{
-
-  background: linear-gradient(to right, #414141, #28ff70, rgb(37, 82, 244),rgb(139, 205, 139),rgb(247, 232, 232));
+.drop-container {
+  background: linear-gradient(
+    to right,
+    #414141,
+    #28ff70,
+    rgb(37, 82, 244),
+    rgb(139, 205, 139),
+    rgb(247, 232, 232)
+  );
   border-radius: 12%;
 }
 
-.row-container:hover{
-
-  background: linear-gradient(to right, #0f0f0f, #28ff70, rgb(37, 82, 244),rgb(4, 17, 4),rgb(48, 1, 1));
+.row-container:hover {
+  background: linear-gradient(
+    to right,
+    #0f0f0f,
+    #28ff70,
+    rgb(37, 82, 244),
+    rgb(4, 17, 4),
+    rgb(48, 1, 1)
+  );
   border-radius: 12%;
-
 }
-.delete-btn{
-  background-color:rgba(37, 36, 36, 0.184);
+.delete-btn {
+  background-color: rgba(37, 36, 36, 0.184);
   border: none;
 }
 
-.delete-btn mat-icon{
+.delete-btn mat-icon {
   color: red;
   padding: 1px;
 }
-
-
-

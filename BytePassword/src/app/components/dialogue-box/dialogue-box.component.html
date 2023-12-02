@@ -20,7 +20,7 @@
   </div>
   <p class="error-alert">{{invalidInfo}}</p>
   <div class="actions">
-    <button mat-raised-button class="cancel-button">Cancel<mat-icon matSuffix>cancel</mat-icon></button>
+    <button mat-raised-button class="cancel-button" (click)="onCancel()">Cancel<mat-icon matSuffix>cancel</mat-icon></button>
     <button type="submit" mat-raised-button class="save-button">Save <mat-icon matSuffix>save</mat-icon></button>
   </div>
 </form>

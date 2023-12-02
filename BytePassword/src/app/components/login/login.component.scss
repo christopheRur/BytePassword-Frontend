@@ -1,75 +1,67 @@
-form{
+form {
   max-width: 410px;
   box-shadow: 0 2px 32px rgba(36, 46, 244, 0.15);
   margin: 82px auto;
   padding: 19px 19px 27px;
   border-radius: 5px;
   color: white;
-  }
-  h1{
-    padding: bottom 5px;
-    border-bottom: 1px solid  rgba(31, 44, 72, 0.291);
-    margin-top: 0;
-    color: rgb(118, 118, 242);
-    text-align: center;
-  }
+}
+h1 {
+  padding: bottom 5px;
+  border-bottom: 1px solid rgba(31, 44, 72, 0.291);
+  margin-top: 0;
+  color: rgb(118, 118, 242);
+  text-align: center;
+}
 
-  .form-control {
-    margin-bottom:16px;
-  input,label{
+.form-control {
+  margin-bottom: 16px;
+  input,
+  label {
     display: block;
   }
-  }
+}
 
-  label{
-    font-size: 15px;
-    font-weight: 500;
-    margin-bottom: 5px;
-  }
+label {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
 
-  input {
-    padding: 7px;
-    height: 34px;
-    border-radius: 5px;
-    width: 95%;
-    border: 1px solic gray;
-    background-color: rgb(245, 254, 254);
+input {
+  padding: 7px;
+  height: 34px;
+  border-radius: 5px;
+  width: 95%;
+  border: 1px solic gray;
+  background-color: rgb(245, 254, 254);
+}
 
+button {
+  background-color: rgb(38, 227, 227);
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 1.2rem;
+}
+.button-container {
+  display: flex;
+  align-items: center;
+}
 
-  }
+.button-spacing {
+  margin-left: 10px; /* Adjust the margin value as needed for desired spacing */
+}
 
-  button {
-    background-color: rgb(38, 227, 227);
-    color: white;
-    padding: 8px 24px;
-    border-radius: 4px;
-    width: 100%;
-    font-size: 1.2rem;
-  }
-  .button-container {
-    display: flex;
-    align-items: center;
-  }
-
-  .button-spacing {
-    margin-left: 10px; /* Adjust the margin value as needed for desired spacing */
-  }
-
-.btn-login:hover{
-
+.btn-login:hover {
   box-shadow: 0 1px 1px 2px rgb(241, 240, 240);
+}
 
-  }
-
- .btn:hover{
+.btn:hover {
   box-shadow: 0 1px 1px 2px rgb(241, 240, 240);
+}
 
- }
-
-
-
-
-  .signFom{
-
-color:red
-  }
+.signFom {
+  color: red;
+}

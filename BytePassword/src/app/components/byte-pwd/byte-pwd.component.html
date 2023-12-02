@@ -1,15 +1,17 @@
 <nav class="navigation">
-  <h1>{{title}}</h1> <button class="logout-btn" mat-button>
-    <mat-icon class="log-out" >logout</mat-icon>
-</button>
-
-  </nav>
+  <h1>{{ title }}</h1>
+  <button class="logout-btn" mat-button>
+    <mat-icon class="log-out">logout</mat-icon>
+  </button>
+</nav>
 <div class="container">
   <button (click)="openDialogToAdd()" class="add-btn" mat-button>
-    <mat-icon >add</mat-icon>
-</button>
+    <mat-icon>add</mat-icon>
+  </button>
   <mat-card class="custom-card">
-    <mat-card-title style="color:rgba(0, 128, 0, 0.374);"> {{subtitle}} </mat-card-title>
+    <mat-card-title style="color: rgba(0, 128, 0, 0.374)">
+      {{ subtitle }}
+    </mat-card-title>
     <mat-card-content class="content">
       <table class="center-table">
         <thead>
@@ -27,33 +29,35 @@
               Password : {{ "fdjkjkflsd4589343879hjkfry" }}
             </td>
 
-            <td><button class="decrypt-btn">Decrypt</button> <button class="delete-btn" mat-button>
-              <mat-icon >delete</mat-icon>
-          </button></td> <pre></pre>
-
+            <td>
+              <button class="decrypt-btn">Decrypt</button>
+              <button class="delete-btn" mat-button>
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+            <pre></pre>
           </tr>
-          <tr> <td class="message">
+          <tr>
+            <td class="message">
+              <button class="dropdown" (click)="toggleDropdown()">
+                View Memo
+              </button>
 
-
-            <button class="dropdown" mat-raised-button (click)="toggleDropdown()">View Memo</button>
-
-              <div class="allSequences" >
-                <div   *ngIf="showDropDown">
+              <div class="allSequences">
+                <div *ngIf="showDropDown">
                   <mat-card>
                     <mat-card-content class="drop-container">
                       <div>
-                        {{ "sequences.sequencen Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done. hCompressing objects: 100% (8/8), done.jh sequences.sequencen Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done. hCompressing objects: 100% (8/8), done.jh" }}
+                        {{
+                          "sequences.sequencen Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done. hCompressing objects: 100% (8/8), done.jh sequences.sequencen Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done. hCompressing objects: 100% (8/8), done.jh"
+                        }}
                       </div>
-
                     </mat-card-content>
                   </mat-card>
-
-
                 </div>
               </div>
-
-
-          </td></tr>
+            </td>
+          </tr>
         </tbody>
       </table>
     </mat-card-content>

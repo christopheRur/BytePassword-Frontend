@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.scss']
+  styleUrls: ['./sign-up.component.scss'],
 })
 export class SignUpComponent implements OnInit {
   signupForm!: FormGroup;
-  constructor(private formBuilder: FormBuilder,private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private router: Router) {}
 
   invalidInfo!: string;
 
@@ -22,7 +27,10 @@ export class SignUpComponent implements OnInit {
     });
   }
   public signUp(): void {
-    if (this.signupForm.invalid || this.signupForm.value.password !== this.signupForm.value.confirm_password) {
+    if (
+      this.signupForm.invalid ||
+      this.signupForm.value.password !== this.signupForm.value.confirm_password
+    ) {
       this.invalidInfo = 'Password mismatch or form incomplete!';
     } else {
       // Navigate to login if form is valid
@@ -30,5 +38,4 @@ export class SignUpComponent implements OnInit {
       alert('Calling backend to sign up!');
     }
   }
-
 }

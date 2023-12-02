@@ -3,21 +3,41 @@
   <form [formGroup]="signupForm" (ngSubmit)="signUp()">
     <div class="form-group">
       <label for="username">Username</label>
-      <input type="text" id="username" formControlName="username" placeholder="Enter your username">
+      <input
+        type="text"
+        id="username"
+        formControlName="username"
+        placeholder="Enter your username"
+      />
     </div>
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" id="email" formControlName="email" placeholder="Enter your email">
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        placeholder="Enter your email"
+      />
     </div>
     <div class="form-group">
       <label for="password">Password</label>
-      <input type="password" id="password" formControlName="password" placeholder="Enter your password">
+      <input
+        type="password"
+        id="password"
+        formControlName="password"
+        placeholder="Enter your password"
+      />
     </div>
     <div class="form-group">
       <label for="confirm-password">Confirm Password</label>
-      <input type="password" id="confirm_password" formControlName="confirm_password" placeholder="Confirm your password">
+      <input
+        type="password"
+        id="confirm_password"
+        formControlName="confirm_password"
+        placeholder="Confirm your password"
+      />
     </div>
-    <p style="color: red;">{{invalidInfo}}</p>
-    <button type="submit" >signUp &#x2302;</button>
+    <p style="color: red">{{ invalidInfo }}</p>
+    <button type="submit">signUp &#x2302;</button>
   </form>
 </div>
