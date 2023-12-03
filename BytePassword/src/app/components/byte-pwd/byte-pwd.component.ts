@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogueBoxComponent } from '../dialogue-box/dialogue-box.component';
+import { Login } from 'src/app/models/login';
+import { BytesService } from 'src/app/services/bytes.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-byte-pwd',
@@ -8,7 +11,7 @@ import { DialogueBoxComponent } from '../dialogue-box/dialogue-box.component';
   styleUrls: ['./byte-pwd.component.scss'],
 })
 export class BytePwdComponent implements OnInit {
-  constructor(private matDialog: MatDialog) {}
+  constructor(private router: Router,private matDialog: MatDialog,private userService: BytesService) {}
 
   public openDialogToAdd(): void {
     this.matDialog.open(DialogueBoxComponent, {
@@ -26,5 +29,24 @@ export class BytePwdComponent implements OnInit {
   toggleDropdown(): boolean {
     this.showDropDown = !this.showDropDown;
     return this.showDropDown;
+  }
+
+/**
+   * Logout user from the system
+   * @returns
+   */
+public logOutUser(): void {
+  let userInfo = {
+    email: ""
+  };
+
+    this.userService.logOutUser(userInfo).subscribe((response: Login) => {
+      console.log(response.login);
+      if (response.logout.toString().localeCompare('true') === 0) {
+        this.router.navigate(['/login']);
+      } else {
+        // this.invalidInfo = 'User does not exist!';
+      }
+    });
   }
 }

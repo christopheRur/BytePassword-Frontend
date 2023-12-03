@@ -52,15 +52,14 @@ export class LoginComponent implements OnInit {
   public logOutUser(): void {
     let userInfo = {
       email: this.loginForm.value.username,
-
     };
 
       this.userService.logOutUser(userInfo).subscribe((response: Login) => {
         console.log(response.login);
-        if (response.login.toString().localeCompare('true') === 0) {
+        if (response.logout.toString().localeCompare('true') === 0) {
           this.router.navigate(['/login']);
         } else {
-          this.invalidInfo = 'Invalid email or password';
+          this.invalidInfo = 'User does not exist!';
         }
       });
     }
