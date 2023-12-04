@@ -1,4 +1,4 @@
-<form [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="off">
+<form [formGroup]="loginForm"  autocomplete="off">
   <h1>{{ title }}</h1>
 
   <div class="form-control">
@@ -22,7 +22,7 @@
   </div>
   <p style="color: red">{{ invalidInfo }}</p>
   <div class="button-container">
-    <button type="submit" class="btn-login">Login &#8594;</button>
+    <button type="submit" class="btn-login" (click)="login()">Login &#8594;</button>
     <span class="button-spacing"></span>
     <button class="btn" type="button" (click)="signUp()">
       Sign Up &#x2302;

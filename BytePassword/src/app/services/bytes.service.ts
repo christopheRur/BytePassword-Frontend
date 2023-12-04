@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -82,6 +82,18 @@ export class BytesService {
     return this.http.post<any>(`${this.apiServiceUrl}/byte/login-user`, userInfo, {
       headers,
     });
+  }
+/**
+ * a service to store the logged-in username
+ */
+  private loggedInUsernameSubject: BehaviorSubject<string> = new BehaviorSubject<string>('');
+
+  setLoggedInUsername(username: string): void {
+    this.loggedInUsernameSubject.next(username);
+  }
+
+  getLoggedInUsername(): Observable<string> {
+    return this.loggedInUsernameSubject.asObservable();
   }
 
 }
