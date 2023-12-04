@@ -5,6 +5,7 @@ import { DialogueBoxComponent } from '../dialogue-box/dialogue-box.component';
 import { BytesService } from 'src/app/services/bytes.service';
 import { Router } from '@angular/router';
 import { Login } from 'src/app/models/Login';
+import { CredentialTemplate } from 'src/app/models/credentialTemplate';
 
 @Component({
   selector: 'app-byte-pwd',
@@ -25,6 +26,16 @@ export class BytePwdComponent implements OnInit {
   title: string = 'BYTE PASSWORD MANAGER';
   subtitle: string = '...BYTE PASSWORDS...';
   showDropDown: boolean = false;
+
+  password!: string;
+  email!: string;
+  name!: string;
+  hint!: string;
+  message!: string;
+  logo!: string;
+  timestamp!: string;
+  action!: string;
+  original!: string;
 
   ngOnInit(): void {}
 
@@ -56,7 +67,7 @@ public logOutUser(): void {
       } else {
          this.invalidInfo = 'User does not exist!';
          alert(this.invalidInfo)
-        // this.refreshPage();
+
          this.router.navigate(['/login']);
 
       }
@@ -66,10 +77,32 @@ public logOutUser(): void {
 
 
   }
-    /**
- *Will reload the passage
+/**
+ *Retrieve data from backend db
  */
- public refreshPage() {
-  window.location.reload();
-}
+  public retrieveAllCreds(): void {
+      this.userService.retrieveCredentials().subscribe((response: CredentialTemplate) => {
+this.setAllDetailValues(response);
+
+      });
+
+    }
+/**
+ * Save the values from database into variables
+ * @param response
+ */
+    public setAllDetailValues(response: CredentialTemplate){
+      this.password=response.password;
+      this.email=response.email;
+      this.name=response.name;
+      this.hint=response.hint;
+      this.message=response.message;
+      this.logo=response.logo;
+      this.timestamp=response.timestamp;
+      this.action=response.action;
+      this.original=response.original;
+
+    }
+
+
 }

@@ -11,7 +11,7 @@ export class BytesService {
 
   constructor(private http: HttpClient) {}
 
-  public retrieveCredentials(country: any): Observable<any> {
+  public retrieveCredentials(): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });
