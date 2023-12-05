@@ -4,15 +4,15 @@
     <mat-icon class="log-out">logout</mat-icon>
   </button>
 </nav>
-<div class="container">
+<div class="container" >
   <button (click)="openDialogToAdd()" class="add-btn" mat-button>
     <mat-icon>add</mat-icon>
   </button>
-  <mat-card class="custom-card">
+  <mat-card class="custom-card"  >
     <mat-card-title style="color: rgba(0, 128, 0, 0.374)">
       {{ subtitle }}
     </mat-card-title>
-    <mat-card-content class="content">
+    <mat-card-content class="content" *ngFor="let details of userDetails">
       <table class="center-table">
         <thead>
           <tr>
@@ -23,10 +23,10 @@
         </thead>
         <tbody>
           <tr class="row-container">
-            <td class="email-cell">Email : {{ "testing@yahoo.com" }}</td>
-            <td>Hint : {{ "Hint" }}</td>
+            <td class="email-cell">Email : {{ details.email }}</td>
+            <td>Hint : {{ details.hint }}</td>
             <td class="password-cell">
-              Password : {{ "fdjkjkflsd4589343879hjkfry" }}
+              Password : {{details.password }}
             </td>
 
             <td>
@@ -39,7 +39,7 @@
           </tr>
           <tr>
             <td class="message">
-              <button class="dropdown" (click)="toggleDropdown()">
+              <button class="dropdown" (click)="getSpecificIdToDropDown(details.id)">
                 View Memo
               </button>
 
@@ -48,9 +48,7 @@
                   <mat-card>
                     <mat-card-content class="drop-container">
                       <div>
-                        {{
-                          "sequences.sequencen Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done. hCompressing objects: 100% (8/8), done.jh sequences.sequencen Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done.Compressing objects: 100% (8/8), done. hCompressing objects: 100% (8/8), done.jh"
-                        }}
+                        {{details.message}}
                       </div>
                     </mat-card-content>
                   </mat-card>

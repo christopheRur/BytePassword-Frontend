@@ -1,7 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { CredTemplate } from '../models/CredTemplate';
 
 @Injectable({
   providedIn: 'root',
@@ -19,7 +20,7 @@ export class BytesService {
     return this.http.get<any>(`${this.apiServiceUrl}/byte/getCredentials`);
   }
 
-  public retrieveEncryptInfo(country: any): Observable<any> {
+  public retrieveEncryptInfo(): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });
@@ -96,4 +97,13 @@ export class BytesService {
     return this.loggedInUsernameSubject.asObservable();
   }
 
+  public retrieveEmailById(idToRetrieve: number): Observable<string> {
+    return this.retrieveCredentials().pipe(
+      map((response: CredTemplate[]) => {
+        const userDetails = response.find(item => item.id === idToRetrieve);
+        return userDetails ? userDetails.email : ''; // Return email if found, otherwise an empty string
+      })
+    );
+
+  }
 }

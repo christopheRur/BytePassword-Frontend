@@ -5,7 +5,10 @@ import { DialogueBoxComponent } from '../dialogue-box/dialogue-box.component';
 import { BytesService } from 'src/app/services/bytes.service';
 import { Router } from '@angular/router';
 import { Login } from 'src/app/models/Login';
-import { CredentialTemplate } from 'src/app/models/credentialTemplate';
+
+import { CredTemplate } from 'src/app/models/CredTemplate';
+import { PwdManager } from 'src/app/models/pwdManager';
+
 
 @Component({
   selector: 'app-byte-pwd',
@@ -37,11 +40,42 @@ export class BytePwdComponent implements OnInit {
   action!: string;
   original!: string;
 
-  ngOnInit(): void {}
+  userDetails: CredTemplate[]=[];
 
-  toggleDropdown(): boolean {
-    this.showDropDown = !this.showDropDown;
-    return this.showDropDown;
+
+
+  ngOnInit(): void {this.retrieveAllCreds()}
+
+  public getSpecificIdToDropDown(id:number){
+    console.log("----------------->"+id)
+
+    this.userService.retrieveEncryptInfo().subscribe((response: PwdManager)=>{
+
+
+
+      console.log("------+++++++-------->"+response.id)
+    if(id===response.id){
+
+      this.showDropDown = !this.showDropDown;
+      console.log("--------78878787--------->"+id)
+
+    }
+    else{
+      alert("Id not found!")
+    }
+
+    });
+  }
+
+  public toggleDropdown(id:number):void  {
+
+    this.userService.retrieveEmailById(id).subscribe(response =>{
+
+      this.showDropDown = !this.showDropDown;
+      console.log("o==--=-=-=-=-=-=-=-=>"+response)
+    })
+
+    //return this.showDropDown;
   }
 
 
@@ -81,26 +115,12 @@ public logOutUser(): void {
  *Retrieve data from backend db
  */
   public retrieveAllCreds(): void {
-      this.userService.retrieveCredentials().subscribe((response: CredentialTemplate) => {
-this.setAllDetailValues(response);
+      this.userService.retrieveCredentials().subscribe((response: CredTemplate[]) => {
+this.userDetails=response.reverse();
+
+
 
       });
-
-    }
-/**
- * Save the values from database into variables
- * @param response
- */
-    public setAllDetailValues(response: CredentialTemplate){
-      this.password=response.password;
-      this.email=response.email;
-      this.name=response.name;
-      this.hint=response.hint;
-      this.message=response.message;
-      this.logo=response.logo;
-      this.timestamp=response.timestamp;
-      this.action=response.action;
-      this.original=response.original;
 
     }
 
