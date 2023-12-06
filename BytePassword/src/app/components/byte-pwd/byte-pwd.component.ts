@@ -47,7 +47,7 @@ export class BytePwdComponent implements OnInit {
   ngOnInit(): void {this.retrieveAllCreds()}
 
   public getSpecificIdToDropDown(id:number){
-    console.log("----------------->"+id)
+    console.log("------>"+id)
 
     this.userService.retrieveEncryptInfo().subscribe((response: PwdManager)=>{
 
@@ -57,7 +57,7 @@ export class BytePwdComponent implements OnInit {
     if(id===response.id){
 
       this.showDropDown = !this.showDropDown;
-      console.log("--------78878787--------->"+id)
+      console.log("--------@@@87--------->"+id)
 
     }
     else{
