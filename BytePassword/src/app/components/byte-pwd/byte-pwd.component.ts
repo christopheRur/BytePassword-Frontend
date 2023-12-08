@@ -75,7 +75,6 @@ export class BytePwdComponent implements OnInit {
       console.log("o==--=-=-=-=-=-=-=-=>"+response)
     })
 
-    //return this.showDropDown;
   }
 
 
@@ -118,11 +117,25 @@ public logOutUser(): void {
       this.userService.retrieveCredentials().subscribe((response: CredTemplate[]) => {
 this.userDetails=response.reverse();
 
-
-
       });
 
     }
+/**
+ *Remove combo of email and password
+ * @param email
+ */
+public deleteEmailPassCombo(email:string){
+ let emailBody={
+  email:email,
+
+ }
+ console.log("--------------------------->>>>>>"+emailBody.email)
+  this.userService.deleteUserInfo(emailBody).subscribe((response:any)=>{
+    console.log("=====> ===|{} {}",emailBody,response)
+
+
+  })
+}
 
 
 }

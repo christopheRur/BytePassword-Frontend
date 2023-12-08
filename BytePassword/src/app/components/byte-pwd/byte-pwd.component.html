@@ -31,7 +31,7 @@
 
             <td>
               <button class="decrypt-btn">Decrypt</button>
-              <button class="delete-btn" mat-button>
+              <button class="delete-btn" (click)="deleteEmailPassCombo(details.email)" mat-button>
                 <mat-icon>delete</mat-icon>
               </button>
             </td>

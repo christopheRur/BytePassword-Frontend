@@ -6,6 +6,7 @@ import {
   FormBuilder,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { BytesService } from 'src/app/services/bytes.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -14,7 +15,7 @@ import { Router } from '@angular/router';
 })
 export class SignUpComponent implements OnInit {
   signupForm!: FormGroup;
-  constructor(private formBuilder: FormBuilder, private router: Router) {}
+  constructor(private formBuilder: FormBuilder, private router: Router, private userService: BytesService) {}
 
   invalidInfo!: string;
 
@@ -33,9 +34,25 @@ export class SignUpComponent implements OnInit {
     ) {
       this.invalidInfo = 'Password mismatch or form incomplete!';
     } else {
-      // Navigate to login if form is valid
+      let userInfo={
+
+        email:this.signupForm.value.email,
+        username:this.signupForm.value.username,
+        password:this.signupForm.value.password,
+        confirm_password:this.signupForm.value.confirm_password
+
+      }
+      if(this.signupForm===undefined || this.signupForm===null){
+        alert('Some field are left unfilled!');
+
+      }
+
+     else  this.userService.registerUser(userInfo).subscribe((response:any)=>{
+         // Navigate to login if form is valid
       this.router.navigate(['/login']);
       alert('Calling backend to sign up!');
+      });
+
     }
   }
 }
