@@ -27,12 +27,16 @@ export class BytesService {
 
     return this.http.get<any>(`${this.apiServiceUrl}/byte/get-info`);
   }
-
+/**
+ *Will delete user info from db
+ * @param info
+ * @returns
+ */
   public deleteUserInfo(info: any): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });
-    console.info("00--=-=-=-=sfsfsfsfsf-==-=->"+info)
+    console.info("00--=-=-=-=ssf-==-=->"+info)
 
     return this.http.delete<any>(
       `${this.apiServiceUrl}/byte/deleteCredentials${info}`,
