@@ -53,7 +53,7 @@ export class BytePwdComponent implements OnInit {
 
 
 
-      console.log("------+++++++-------->"+response.id)
+      console.log("--++++-------->"+response.id)
     if(id===response.id){
 
       this.showDropDown = !this.showDropDown;
@@ -130,7 +130,7 @@ public deleteEmailPassCombo(email:string){
 
  }
  console.log("--------------------------->>>>>>"+emailBody.email)
-  this.userService.deleteUserInfo(emailBody).subscribe((response:any)=>{
+  this.userService.deleteUserInfo(email).subscribe((response:any)=>{
     console.log("=====> ===|{} {}",emailBody,response)
 
 

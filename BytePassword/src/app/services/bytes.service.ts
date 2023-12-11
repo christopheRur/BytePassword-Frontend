@@ -36,11 +36,11 @@ export class BytesService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });
-    console.info("00--=-=-=-=ssf-==-=->"+info)
+    console.info("00--=-=-=ssf-==-=->"+info)
 
     return this.http.delete<any>(
       `${this.apiServiceUrl}/byte/deleteCredentials${info}`,
-    {headers},
+
     );
   }
 
