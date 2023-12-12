@@ -57,7 +57,7 @@ export class BytePwdComponent implements OnInit {
     if(id===response.id){
 
       this.showDropDown = !this.showDropDown;
-      console.log("--------@@@87--------->"+id)
+      console.log("---@@87--------->"+id)
 
     }
     else{
