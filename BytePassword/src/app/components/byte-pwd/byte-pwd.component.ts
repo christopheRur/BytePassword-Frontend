@@ -129,8 +129,8 @@ public deleteEmailPassCombo(email:string){
   email:email,
 
  }
- console.log("--------------------------->>>>>>"+emailBody.email)
-  this.userService.deleteUserInfo(email).subscribe((response:any)=>{
+
+  this.userService.deleteUserInfo(emailBody).subscribe((response:any)=>{
     console.log("=====> ===|{} {}",emailBody,response)
 
 
