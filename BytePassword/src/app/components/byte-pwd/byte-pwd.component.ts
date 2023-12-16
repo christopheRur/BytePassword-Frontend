@@ -46,23 +46,31 @@ export class BytePwdComponent implements OnInit {
 
   ngOnInit(): void {this.retrieveAllCreds()}
 
-  public getSpecificIdToDropDown(id:number){
+  public getSpecificIdToDropDown(id:any){
     console.log("------>"+id)
 
-    this.userService.retrieveEncryptInfo().subscribe((response: PwdManager)=>{
+    this.userService.retrieveCredentials().subscribe((response: any)=>{
 
+      // for (id in response.id){
 
+      // }
+
+      response.id.forEach((id:number) => {
+
+        if(id===response.id){
+
+          this.showDropDown = !this.showDropDown;
+          console.log("---@@87--------->"+id)
+
+        }
+        else{
+          alert("Id not found!")
+        }
+
+      });
 
       console.log("--++++-------->"+response.id)
-    if(id===response.id){
 
-      this.showDropDown = !this.showDropDown;
-      console.log("---@@87--------->"+id)
-
-    }
-    else{
-      alert("Id not found!")
-    }
 
     });
   }
@@ -131,7 +139,7 @@ public deleteEmailPassCombo(email:string){
  }
 
   this.userService.deleteUserInfo(emailBody).subscribe((response:any)=>{
-    console.log("=====> ===|{} {}",emailBody,response)
+    console.log("=====> ===|{} {}",emailBody.email,response)
 
 
   })

@@ -54,6 +54,19 @@ export class BytesService {
       { headers }
     );
   }
+
+
+  public verifyId(info: any): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+
+    return this.http.post<any>(
+      `${this.apiServiceUrl}/byte/verify_id`,
+      info,
+      { headers }
+    );
+  }
   /* **   USER SERVICES ** */
 
 
