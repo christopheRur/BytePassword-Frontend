@@ -7,7 +7,8 @@ import { Router } from '@angular/router';
 import { Login } from 'src/app/models/Login';
 
 import { CredTemplate } from 'src/app/models/CredTemplate';
-import { PwdManager } from 'src/app/models/pwdManager';
+import { PwdManager } from 'src/app/models/PwdManager';
+
 
 
 @Component({
@@ -46,30 +47,28 @@ export class BytePwdComponent implements OnInit {
 
   ngOnInit(): void {this.retrieveAllCreds()}
 
-  public getSpecificIdToDropDown(id:any){
-    console.log("------>"+id)
+  public getSpecificIdToDropDown(email:any){
+    console.log("------>"+email)
 
-    this.userService.retrieveCredentials().subscribe((response: any)=>{
+    let emailBody={
+      email:email
+    }
+
+    this.userService.verifyId(emailBody).subscribe((response: any)=>{
 
       // for (id in response.id){
 
       // }
 
-      response.id.forEach((id:number) => {
+console.info("------------------+++------------------>"+response);
 
-        if(id===response.id){
 
-          this.showDropDown = !this.showDropDown;
-          console.log("---@@87--------->"+id)
 
-        }
-        else{
           alert("Id not found!")
-        }
 
-      });
 
-      console.log("--++++-------->"+response.id)
+
+      console.log("--++++-------->"+response.email)
 
 
     });
