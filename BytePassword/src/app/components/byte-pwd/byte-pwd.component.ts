@@ -54,13 +54,13 @@ export class BytePwdComponent implements OnInit {
       email:email
     }
 
-    this.userService.verifyId(emailBody).subscribe((response: any)=>{
+    this.userService.verifyId(emailBody).subscribe((response: PwdManager)=>{
 
       // for (id in response.id){
 
       // }
 
-console.info("------------------+++------------------>"+response);
+console.info("----------------+++------------------>"+response);
 
 
 
@@ -68,7 +68,7 @@ console.info("------------------+++------------------>"+response);
 
 
 
-      console.log("--++++-------->"+response.email)
+      console.log("--++++-------->"+response)
 
 
     });
