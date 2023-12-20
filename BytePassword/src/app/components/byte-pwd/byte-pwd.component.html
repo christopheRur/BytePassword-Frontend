@@ -14,8 +14,7 @@
         View Memo
       </button>
       <span style="margin-right: 10px;"></span>
-
-      <button class="decrypt-btn">Decrypt</button>
+      <button class="decrypt-btn" (click)="togglePassword()">Decrypt Password</button>
 
     </td>
 
@@ -36,10 +35,13 @@
             <td class="email-cell">Email : {{ details.email }}</td>
             <td>Hint : {{ details.hint }}</td>
             <td class="password-cell">
-              Password : {{details.password }}
+
+              Password : <span *ngIf="showPassword">{{details.original}}</span>
+              <span *ngIf="showDecryptedPwd">{{details.password}}</span>
             </td>
 
             <td>
+
 
               <button class="delete-btn" (click)="deleteEmailPassCombo(details.email)" mat-button>
                 <mat-icon>delete</mat-icon>
@@ -49,7 +51,7 @@
           </tr>
           <tr>
             <td class="message">
-              <button class="available" (click)="getSpecificIdToDropDown(details.email)">
+              <button class="available" (click)="getSpecificId(details.email)">
                 Availability
               </button>
 

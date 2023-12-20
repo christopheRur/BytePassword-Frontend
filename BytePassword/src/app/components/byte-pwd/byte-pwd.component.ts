@@ -32,6 +32,8 @@ export class BytePwdComponent implements OnInit {
   title: string = 'BYTE PASSWORD MANAGER';
   subtitle: string = '...BYTE PASSWORDS...';
   showDropDown: boolean = false;
+  showPassword: boolean = false;
+  showDecryptedPwd: boolean =true;
 
   password!: string;
   email!: string;
@@ -45,10 +47,41 @@ export class BytePwdComponent implements OnInit {
 
   userDetails: CredTemplate[] = [];
 
+  theDecrypted!:string;
+
   ngOnInit(): void {
     this.retrieveAllCreds();
   }
 
+
+
+
+  togglePassword(): void {
+    this.showPassword = !this.showPassword;
+    this.showDecryptedPwd=!this.showDecryptedPwd;
+  }
+
+/**
+ *set to decrypt password
+ * @param pwd
+ */
+public decryptPassword(pwd:string):string{
+  console.log(" original ==>"+pwd)
+
+  this.password=pwd;
+  console.log(" o---riginal ==>"+this.password)
+
+return this.password;
+
+
+}
+
+
+
+
+/**
+ *Retrieve specific id
+ */
   public getSpecificId(email: any) {
     console.log('->' + email);
 
@@ -66,7 +99,9 @@ export class BytePwdComponent implements OnInit {
       } else alert('This combination was not found!');
     });
   }
-
+/**
+ *Drop down the memo
+ */
   public toggleDropdown(): void {
 
       this.showDropDown = !this.showDropDown;
