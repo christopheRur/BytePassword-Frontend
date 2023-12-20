@@ -9,10 +9,20 @@
     <mat-icon>add</mat-icon>
   </button>
   <mat-card class="custom-card"  >
-    <mat-card-title style="color: rgba(0, 128, 0, 0.374)">
+    <td class="upper_button">
+      <button class="dropdown" (click)="toggleDropdown()">
+        View Memo
+      </button>
+      <span style="margin-right: 10px;"></span>
+
+      <button class="decrypt-btn">Decrypt</button>
+
+    </td>
+
+    <mat-card-title style="color: rgba(0, 128, 0, 0.374);font-size: 14px">
       {{ subtitle }}
     </mat-card-title>
-    <mat-card-content class="content" *ngFor="let details of userDetails">
+    <mat-card-content class="content" >
       <table class="center-table">
         <thead>
           <tr>
@@ -21,7 +31,7 @@
             <td class="password">PASSWORDS</td>
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let details of userDetails">
           <tr class="row-container">
             <td class="email-cell">Email : {{ details.email }}</td>
             <td>Hint : {{ details.hint }}</td>
@@ -30,7 +40,7 @@
             </td>
 
             <td>
-              <button class="decrypt-btn">Decrypt</button>
+
               <button class="delete-btn" (click)="deleteEmailPassCombo(details.email)" mat-button>
                 <mat-icon>delete</mat-icon>
               </button>
@@ -39,13 +49,13 @@
           </tr>
           <tr>
             <td class="message">
-              <button class="dropdown" (click)="getSpecificIdToDropDown(details.email)">
-                View Memo
+              <button class="available" (click)="getSpecificIdToDropDown(details.email)">
+                Availability
               </button>
 
               <div class="">
-                <div *ngIf="showDropDown">
-                  <mat-card>
+                <div *ngIf="showDropDown" class="memoboard">
+                  <mat-card style="background-color: black;">
                     <mat-card-content class="drop-container">
                       <div>
                         {{details.message}}

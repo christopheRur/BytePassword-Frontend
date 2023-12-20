@@ -56,14 +56,20 @@ export class BytesService {
   }
 
 
-  public verifyId(info: any): Observable<any> {
+  public verifyId(infoEmail: string): Observable<any> {
+
+    let emailBody={
+      email:infoEmail
+    }
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });
 
+console.log("=========service-----",emailBody)
+
     return this.http.post<any>(
       `${this.apiServiceUrl}/byte/verify_id`,
-      info,
+      emailBody,
       { headers }
     );
   }

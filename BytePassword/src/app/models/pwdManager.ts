@@ -4,4 +4,5 @@ email:string;
 password:string;
 original:string;
 encryptedPwd:string;
+message:string;
 }

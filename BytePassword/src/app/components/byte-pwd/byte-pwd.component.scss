@@ -54,6 +54,12 @@
   width: 100%;
   text-align: center;
 }
+.upper_button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: 122px;
+}
 
 .custom-card {
   width: 2000px;
@@ -102,6 +108,9 @@
   padding-right: 200px;
   align-items: center;
 }
+.memoboard{
+  background-color: black;
+}
 .decrypt-btn {
   background-color: #4caf50; /* Green background */
   color: white;
@@ -116,8 +125,18 @@
   background-color: #0e220f;
 }
 .dropdown {
-  background-color: #4caf50;
+  background-color: #4c4faf;
   color: white;
+  padding: 2px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+
+  text-align: center;
+}
+.available{
+  background-color: #4c4faf23;
+  color: rgba(255, 255, 255, 0.135);
   padding: 2px 12px;
   border: none;
   cursor: pointer;
@@ -138,7 +157,7 @@
     rgb(139, 205, 139),
     rgb(247, 232, 232)
   );
-  border-radius: 12%;
+
 }
 
 .row-container:hover {
