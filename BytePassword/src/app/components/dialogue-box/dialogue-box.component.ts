@@ -26,6 +26,7 @@ export class DialogueBoxComponent implements OnInit {
     this.matDialog.closeAll();
   }
   public addCredentials() {
+this.addForm
     if (this.addForm.invalid) {
       this.invalidInfo = 'Form is incomplete!';
     } else {
