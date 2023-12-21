@@ -14,7 +14,9 @@ import { BytesService } from 'src/app/services/bytes.service';
   styleUrls: ['./sign-up.component.scss'],
 })
 export class SignUpComponent implements OnInit {
+
   signupForm!: FormGroup;
+
   constructor(private formBuilder: FormBuilder, private router: Router, private userService: BytesService) {}
 
   invalidInfo!: string;
