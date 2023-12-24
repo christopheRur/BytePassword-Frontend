@@ -28,12 +28,11 @@ export class LoginComponent implements OnInit {
    * @returns
    */
   public login(): void {
-
     let userInfo = {
       email: this.loginForm.value.username,
       password: this.loginForm.value.password,
     };
-    let userEmail:string=this.loginForm.value.username as string;
+    let userEmail: string = this.loginForm.value.username as string;
     this.userService.setLoggedInUsername(userEmail);
     if (this.loginForm.invalid) {
       this.invalidInfo = 'Invalid email or password';
@@ -42,7 +41,6 @@ export class LoginComponent implements OnInit {
       this.userService.logInUser(userInfo).subscribe((response: Login) => {
         console.log(response.login);
         if (response.login.toString().localeCompare('true') === 0) {
-
           this.router.navigate(['/byte-pwd']);
         } else {
           this.invalidInfo = 'Invalid email or password';
@@ -55,23 +53,17 @@ export class LoginComponent implements OnInit {
    * @returns
    */
   public logOutUser(): void {
-    let userInfo = {
+    let userInfo = {};
 
-    };
-
-      this.userService.logOutUser(userInfo).subscribe((response: Login) => {
-        console.log(response.login);
-        if (response.logout.toString().localeCompare('true') === 0) {
-
-
-          this.router.navigate(['/login']);
-        } else {
-          this.invalidInfo = 'User does not exist!';
-        }
-      });
-    }
-
-
+    this.userService.logOutUser(userInfo).subscribe((response: Login) => {
+      console.log(response.login);
+      if (response.logout.toString().localeCompare('true') === 0) {
+        this.router.navigate(['/login']);
+      } else {
+        this.invalidInfo = 'User does not exist!';
+      }
+    });
+  }
 
   public signUp(): void {
     this.router.navigate(['/sign-up']);

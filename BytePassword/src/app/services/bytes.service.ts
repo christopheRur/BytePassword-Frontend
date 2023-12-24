@@ -75,7 +75,7 @@ export class BytesService {
       'Content-Type': 'application/json',
     });
 
-    console.log('=========service-----', emailBody);
+    console.log('==service>', emailBody);
 
     return this.http.post<any>(
       `${this.apiServiceUrl}/byte/verify_id`,
@@ -134,6 +134,13 @@ export class BytesService {
       }
     );
   }
+/**
+ *utilities
+ */
+ public reloadPage(){
+  window.location.reload()
+}
+
   /**
    * a service to store the logged-in username
    */

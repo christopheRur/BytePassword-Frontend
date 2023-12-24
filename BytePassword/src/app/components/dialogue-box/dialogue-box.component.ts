@@ -47,7 +47,8 @@ export class DialogueBoxComponent implements OnInit {
       this.invalidInfo = 'Form is incomplete!';
     } else {
       this.userService.addCredentials(combo).subscribe((response: any) => {
-        alert('Added the email+password combination. ');
+        this.userService.reloadPage();
+
       });
     }
   }

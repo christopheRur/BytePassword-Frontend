@@ -4,24 +4,23 @@
     <mat-icon class="log-out">logout</mat-icon>
   </button>
 </nav>
-<div class="container" >
+<div class="container">
   <button (click)="openDialogToAdd()" class="add-btn" mat-button>
     <mat-icon>add</mat-icon>
   </button>
-  <mat-card class="custom-card"  >
+  <mat-card class="custom-card">
     <td class="upper_button">
-      <button class="dropdown" (click)="toggleDropdown()">
-        View Memo
+      <button class="dropdown" (click)="toggleDropdown()">View Memo</button>
+      <span style="margin-right: 10px"></span>
+      <button class="decrypt-btn" (click)="togglePassword()">
+        Decrypt Password
       </button>
-      <span style="margin-right: 10px;"></span>
-      <button class="decrypt-btn" (click)="togglePassword()">Decrypt Password</button>
-
     </td>
 
-    <mat-card-title style="color: rgba(0, 128, 0, 0.374);font-size: 14px">
+    <mat-card-title style="color: rgba(0, 128, 0, 0.374); font-size: 14px">
       {{ subtitle }}
     </mat-card-title>
-    <mat-card-content class="content" >
+    <mat-card-content class="content">
       <table class="center-table">
         <thead>
           <tr>
@@ -35,15 +34,17 @@
             <td class="email-cell">Email : {{ details.email }}</td>
             <td>Hint : {{ details.hint }}</td>
             <td class="password-cell">
-
-              Password : <span *ngIf="showPassword">{{details.original}}</span>
-              <span *ngIf="showDecryptedPwd">{{details.password}}</span>
+              Password :
+              <span *ngIf="showPassword">{{ details.original }}</span>
+              <span *ngIf="showDecryptedPwd">{{ details.password }}</span>
             </td>
 
             <td>
-
-
-              <button class="delete-btn" (click)="deleteEmailPassCombo(details.email)" mat-button>
+              <button
+                class="delete-btn"
+                (click)="deleteEmailPassCombo(details.email)"
+                mat-button
+              >
                 <mat-icon>delete</mat-icon>
               </button>
             </td>
@@ -57,10 +58,10 @@
 
               <div class="">
                 <div *ngIf="showDropDown" class="memoboard">
-                  <mat-card style="background-color: black;">
+                  <mat-card style="background-color: black">
                     <mat-card-content class="drop-container">
                       <div>
-                        {{details.message}}
+                        {{ details.message }}
                       </div>
                     </mat-card-content>
                   </mat-card>

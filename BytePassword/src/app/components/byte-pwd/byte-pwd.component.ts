@@ -140,6 +140,7 @@ export class BytePwdComponent implements OnInit {
     };
 
     this.userService.deleteUserInfo(emailBody).subscribe((response: any) => {
+      this.userService.reloadPage();
       console.log('=====>->', emailBody.email, response);
     });
   }
