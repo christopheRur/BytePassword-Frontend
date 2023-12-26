@@ -46,9 +46,8 @@ export class DialogueBoxComponent implements OnInit {
     if (this.addForm.invalid) {
       this.invalidInfo = 'Form is incomplete!';
     } else {
-      this.userService.addCredentials(combo).subscribe((response: any) => {
-        this.userService.reloadPage();
-
+      this.userService.addCredentials(combo).subscribe(
+        (response: any) => {this.userService.reloadPage();
       });
     }
   }
